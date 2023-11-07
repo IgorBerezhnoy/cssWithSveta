@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import {StyledBtn} from './components/Button.styled';
 import {StyledLink} from './components/Link.styled.';
 import {Menu} from './components/Menu';
+import {myTheme} from './styles/Thema/Theme.styled';
 
 function App() {
   return (
@@ -21,8 +22,8 @@ function App() {
         {/*<StyledBtn color={' deeppink'} fontSize={"20px"}>StyledLink</StyledBtn>*/}
         {/*<StyledBtn fontSize={"30px"} >StyledLink</StyledBtn>*/}
         {/*<StyledBtn >StyledLink</StyledBtn>*/}
-        <StyledBtn btnType={"primary"} >StyledLink</StyledBtn>
-        <StyledBtn btnType={"outlined"}  >StyledLink</StyledBtn>
+        <StyledBtn color={myTheme.color.primary} btnType={"primary"} >StyledLink</StyledBtn>
+        <StyledBtn color={myTheme.color.secondary} btnType={"outlined"}  >StyledLink</StyledBtn>
         <StyledBtn btnType={"active"}  >StyledLink</StyledBtn>
         {/*<input/>*/}
         {/*<input type={"submit"}/>*/}
@@ -52,7 +53,7 @@ const Box = styled.div`
     cursor: zoom-in;
   }
 
-  @media screen and (max-width: 800px) {
+  @media ${myTheme.media.tablet}{
     flex-direction: column;
   }
 `;

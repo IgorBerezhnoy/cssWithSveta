@@ -1,4 +1,5 @@
 import {createGlobalStyle} from 'styled-components';
+import {myTheme} from './Thema/Theme.styled';
 
 export const GlobalStyles=createGlobalStyle`
 *,
@@ -14,6 +15,7 @@ export const GlobalStyles=createGlobalStyle`
   -moz-osx-font-smoothing: grayscale;
 }
 body{
-  background: #131313;
+
+  background-color: ${myTheme.color.grey.dark};
 }
 `
