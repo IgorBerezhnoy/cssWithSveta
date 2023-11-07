@@ -5,6 +5,7 @@ import {StyledBtn} from './components/Button.styled';
 import {StyledLink} from './components/Link.styled.';
 import {Menu} from './components/Menu';
 import {myTheme} from './styles/Thema/Theme.styled';
+import {Card} from './homework/Card';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         {/*<StyledBtn color={' deeppink'} fontSize={"20px"}>StyledLink</StyledBtn>*/}
         {/*<StyledBtn fontSize={"30px"} >StyledLink</StyledBtn>*/}
         {/*<StyledBtn >StyledLink</StyledBtn>*/}
+        <Card/>
         <StyledBtn color={myTheme.color.primary} btnType={"primary"} >StyledLink</StyledBtn>
         <StyledBtn color={myTheme.color.secondary} btnType={"outlined"}  >StyledLink</StyledBtn>
         <StyledBtn btnType={"active"}  >StyledLink</StyledBtn>
