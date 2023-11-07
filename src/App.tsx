@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import styled from 'styled-components';
-import {StyledBtn, SuperButton} from './components/Button.styled';
+import {StyledBtn} from './components/Button.styled';
 import {StyledLink} from './components/Link.styled.';
 import {Menu} from './components/Menu';
 
@@ -18,17 +18,23 @@ function App() {
       </Menu>
       <Box>
         Hello
-        <StyledBtn as="a" href={'#'}>StyledLink</StyledBtn>
-        <StyledLink href={'#'}>Link</StyledLink>
-        <StyledBtn>StyledBtn</StyledBtn>
-        <SuperButton>SuperButton</SuperButton>
+        {/*<StyledBtn color={' deeppink'} fontSize={"20px"}>StyledLink</StyledBtn>*/}
+        {/*<StyledBtn fontSize={"30px"} >StyledLink</StyledBtn>*/}
+        {/*<StyledBtn >StyledLink</StyledBtn>*/}
+        <StyledBtn btnType={"primary"} >StyledLink</StyledBtn>
+        <StyledBtn btnType={"outlined"}  >StyledLink</StyledBtn>
+        <StyledBtn btnType={"active"}  >StyledLink</StyledBtn>
+        {/*<input/>*/}
+        {/*<input type={"submit"}/>*/}
+        {/*/!*<StyledLink href={'#'}>Link</StyledLink>*!/*/}
+        {/*<StyledBtn>StyledBtn</StyledBtn>*/}
+        {/*<SuperButton>SuperButton</SuperButton>*/}
       </Box>
     </div>
   );
 }
 
 export default App;
-
 
 
 const Box = styled.div`
@@ -45,8 +51,8 @@ const Box = styled.div`
   ${StyledLink} {
     cursor: zoom-in;
   }
-  
-  @media screen and (max-width: 800px){
+
+  @media screen and (max-width: 800px) {
     flex-direction: column;
   }
 `;

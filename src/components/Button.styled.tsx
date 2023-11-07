@@ -1,30 +1,56 @@
-import styled from 'styled-components';
+import styled, {css} from 'styled-components';
 import {MyAnimation} from '../styles/animations/Animations';
 
-export const StyledBtn = styled.button`
+
+type StyledBtnType = {
+  color?: string
+  fontSize?: string
+  btnType:"outlined"|"primary"|"active"
+}
+
+
+export const StyledBtn = styled.button<StyledBtnType>`
 
   border: none;
-  background: pink;
+    /*  background: ${
+          props => props.color || 'red'
+  };*/
   padding: 10px 20px;
   border-radius: 5px;
-  color: snow;
-  font-size: 2rem;
+  //color: snow;
+  font-size: ${
+          props => props.fontSize||"2rem"
+  };
   font-weight: bold;
 
   &:hover {
-    background: deeppink;
+    background: yellowgreen;
   }
+  
+  ${props=>props.btnType==="outlined" && css<StyledBtnType>`
+    //outline
+    border: 2px solid ${props => props.color && "white"};
+    color: ${pr => pr.color || "white"};
+    background-color: transparent;
 
-  &:last-child {
-    background: greenyellow;
-  }
-`;
-
-export const SuperButton = styled(StyledBtn)`
-  border-radius: 0;
-  background: yellowgreen;
-  color: black;
-  &:hover{
-  animation: ${MyAnimation} 2s ease-in-out infinite;
-  }
+    &:hover{
+    }
+    
+  `
+} 
+ 
+  //primary
+  ${props=>props.btnType==="primary"  && css<StyledBtnType>`
+    background: ${
+            props => props.color || 'red'
+    };
+    color: snow;
+  `
+}
+  //active
+  ${props=>props.btnType==="active"  && css<StyledBtnType>`
+box-shadow: 5px 5px 5px 5px white;
+  `
+}
+  
 `;
